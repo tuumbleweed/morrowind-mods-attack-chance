@@ -24,29 +24,29 @@ local function ReCalcHitChance(e)
 	if e.attacker == tes3.player or config.affectEnemiesToo then
 		local weapon = tes3.getObject(e.attackerMobile.readiedWeapon.object.id)
 		if weapon.type == tes3.weaponType.bluntTwoClose then
-			newChance = newChance - 15
+			newChance = newChance + config.bluntTwoClose
 		elseif weapon.type == tes3.weaponType.bluntTwoWide then
-			newChance = newChance - 10
+			newChance = newChance + config.bluntTwoWide
 		elseif weapon.type == tes3.weaponType.bluntOneHand then
-			newChance = newChance - 5
+			newChance = newChance + config.bluntOneHand
 		elseif weapon.type == tes3.weaponType.axeTwoHand then
-			newChance = newChance - 30
+			newChance = newChance + config.axeTwoHand
 		elseif weapon.type == tes3.weaponType.axeOneHand then
-			newChance = newChance - 20
+			newChance = newChance + config.axeOneHand
 		elseif weapon.type == tes3.weaponType.spearTwoWide then
-			newChance = newChance + 5
+			newChance = newChance + config.spearTwoWide
 		elseif weapon.type == tes3.weaponType.longBladeTwoClose then
-			newChance = newChance + 5
+			newChance = newChance + config.longBladeTwoClose
 		elseif weapon.type == tes3.weaponType.longBladeOneHand then
-			newChance = newChance + 15
+			newChance = newChance + config.longBladeOneHand
 		elseif weapon.type == tes3.weaponType.shortBladeOneHand then
-			newChance = newChance + 30
+			newChance = newChance + config.shortBladeOneHand
 		elseif weapon.type == tes3.weaponType.marksmanThrown then
-			newChance = newChance + 30
+			newChance = newChance + config.marksmanThrown
 		elseif weapon.type == tes3.weaponType.marksmanBow then
-			newChance = newChance + 15
+			newChance = newChance + config.marksmanBow
 		elseif weapon.type == tes3.weaponType.marksmanCrossbow then
-			newChance = newChance + 20
+			newChance = newChance + config.marksmanCrossbow
 		end
 		log:debug(tostring('oldChance "%s" newChance "%s" target "%s" attacker "%s", objectType "%s", Type "%s"'):format(oldChance, newChance, e.targetMobile.reference, e.attacker, e.attackerMobile.readiedWeapon.object.id, weapon.typeName))
     end
